@@ -7,7 +7,7 @@ const rate = 0,
         { card: "elo", debit: 1.89, credit: 2.99, installments: [3.59, 3.99] },
         { card: "american express", debit: 0, credit: 3.99, installments: [4.29, 4.59] },
         { card: "cabal", debit: 5, credit: 5, installments: [5.25, 5.50] },
-        { card: "unionpay", debit: 4, credit: 5, installments: [4, 4] }
+        { card: "unionpay", debit: 4, credit: 4, installments: [4, 4] }
     ];
 function calc() {
     let a = $("#price").val(),

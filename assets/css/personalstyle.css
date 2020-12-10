@@ -1,0 +1,42 @@
+body{
+    background-color: #ebebeb;
+}
+
+html{
+    background-color: #ebebeb;
+}
+
+.cards-item img{
+    width: 75px;
+    height: 75px;
+    /* background-color: salmon; */
+}
+
+.logo{
+    margin-top: -80px;
+    text-align: center;
+    margin-bottom: -108px;
+}
+
+.logo::after{
+    display: block;
+    font-size: 17px;
+    content:"Apple São Luís";
+    height: 160px;
+    width: 100%;
+    margin-top: 20px;
+    color: #2c358f;
+}
+
+.btn-clicked{
+    background-color: rgb(93, 207, 110);
+}
+
+.logo img{
+    width: 35px;
+    height: auto;
+}
+
+.fi-xnsuxl-whatsapp{
+    padding: 0 10px 0 10px;
+}

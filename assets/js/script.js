@@ -17,16 +17,24 @@ function calc() {
     $("#currency").html(calculating(a.replace("R$ ", "").replace(".", "").replace(",", "."), l, e));
 }
 function calculating(a, e = 0, l = 0) {
-    let t, c;
-    return (
-        e++,
-        console.log(a, e, l),
-        1 === parseInt(e)
-            ? ((t = (a / (100 - cards[l].debit)) * 100), accounting.formatMoney(t, "R$", 2, ".", ","))
-            : e < 7
-            ? ((c = (a / (100 - (cards[l].credit + cards[l].installments[0] * e))) * 100), accounting.formatMoney(c, "R$", 2, ".", ","))
-            : ((c = (a / (100 - (cards[l].credit + cards[l].installments[1] * e))) * 100), accounting.formatMoney(c, "R$", 2, ".", ","))
-    );
+    console.log(price, installments, flag);
+//   let total = (price / (100 - (advance + cards[flag]['installments'][installments]))) * 100;
+//   const total = (price / (100 - (advance + cards[flag].credit * installments ))) * 100;
+  // const total1 = (price / (100 - (advance + cards[flag].credit)))*100; 
+  let total1 = 2;
+  if(+installments === 0)
+  {
+    total1 = (price / (100 - (advance + cards[flag].credit ))) * 100; 
+  }
+  else if(+installments >= 1 && +installments < 7)
+  {
+    total1 = (price / (100 - (advance + (cards[flag].installments[0] * installments)))) * 100;
+  }else if(+installments >= 7)
+  {
+    total1 = (price / (100 - (advance + (cards[flag].installments[1] * installments)))) * 100;
+  }
+  console.log(`(${price} / (100- (${advance} + ${cards[flag].credit})))*100`);
+  return accounting.formatMoney(total1, 'R$', 2, '.', ',');
 }
 $("#price").maskMoney(),
     $("#price").on("keyup", () => {
